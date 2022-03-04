@@ -2,7 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+<<<<<<< HEAD
   console.log('test')
+=======
+  console.log('asdasd')
+>>>>>>> 58046bc2bfa13580a1bec917e29270bc6ebe5848
   return (
     <div className="App">
       <header className="App-header">
