@@ -1,0 +1,20 @@
+.devices {
+  display: flex;
+  justify-content: space-between;
+  .device_item {
+    width: auto;
+    min-width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    img {
+      width: 100%;
+      height: 50%;
+      border-radius: 1rem;
+    }
+  }
+}
