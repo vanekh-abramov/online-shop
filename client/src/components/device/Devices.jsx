@@ -2,24 +2,25 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../../styles/devices.module.scss";
 import DeviceItem from "./DeviceItem";
+import { LOCAL_HOST, API_URL, DEVICE_URL } from "../../constants/internalLinks";
+
 
 const Devices = () => {
-  const [post, setPosts] = useState([]);
+  const [card, setCard] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/device")
-      .then((res) => setPosts(res.data.rows))
+      .get(`${LOCAL_HOST}/${API_URL}/${DEVICE_URL}`)
+      .then((res) => setCard(res.data.rows))
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
-  console.log(post);
 
   return (
     <ul className={styles.devices}>
-      {post.map(({ id, name, price, img, createdAt }) => (
+      {card.map(({ id, name, price, img, createdAt }) => (
         <DeviceItem
           key={createdAt}
           id={id}

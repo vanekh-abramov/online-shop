@@ -1,0 +1,19 @@
+.brands_wrapper {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  .brand_item {
+    padding: 0.1em;
+    font-size: 1.5rem;
+    text-decoration: none;
+    list-style: none;
+    margin: 1rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .7s linear;
+    &:hover {
+      background-color: rgb(219, 214, 214);
+    }
+  }
+}
