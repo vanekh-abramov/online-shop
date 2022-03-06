@@ -1,7 +1,11 @@
+@use 'variables' as v;
+
 .devices {
   display: flex;
   justify-content: space-between;
   .device_item {
+    background-color: v.$base;
+    color: v.$second;
     width: auto;
     min-width: 150px;
     height: 200px;
@@ -12,9 +16,10 @@
     justify-content: space-between;
     border-radius: 1rem;
     cursor: pointer;
-    transition: background-color .7s linear;
+    transition: background-color 0.7s linear;
     &:hover {
-      background-color: rgb(219, 214, 214);
+      color: v.$base;
+      background-color: v.$second;
     }
     img {
       width: 100%;

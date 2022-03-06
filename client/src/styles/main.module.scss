@@ -3,10 +3,19 @@
   max-width: 1440px;
 }
 
-.container_inner {
-  margin: 3rem;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  // display: flex;
-  // justify-content: space-between;
+.container_inner {  display: grid;
+  grid-template-columns: 0.4fr 1.6fr;
+  grid-template-rows: 0.5fr 1.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  gap: 1.5rem 1.5rem; 
+  grid-template-areas:
+    "topT topT"
+    "botL botR";
 }
+
+.topT { grid-area: topT; }
+
+.botL { grid-area: botL; }
+
+.botR { grid-area: botR; }

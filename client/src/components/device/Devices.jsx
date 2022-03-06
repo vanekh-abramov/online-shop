@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import styles from "../../styles/devices.module.scss";
 import DeviceItem from "./DeviceItem";
 import { LOCAL_HOST, API_URL, DEVICE_URL } from "../../constants/internalLinks";
-
+import useFetch from "../../hooks/useFetch";
 
 const Devices = () => {
-  const [card, setCard] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get(`${LOCAL_HOST}/${API_URL}/${DEVICE_URL}`)
-      .then((res) => setCard(res.data.rows))
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
+  const [devices, loading, error] = useFetch(`${LOCAL_HOST}/${API_URL}/${DEVICE_URL}`);
 
   return (
     <ul className={styles.devices}>
-      {card.map(({ id, name, price, img, createdAt }) => (
+      {loading && <div>loading</div>}
+      {error && <div>{error}</div>}
+      {devices.rows?.map(({ id, name, price, img, createdAt }) => (
         <DeviceItem
           key={createdAt}
           id={id}

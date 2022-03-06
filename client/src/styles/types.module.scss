@@ -1,18 +1,21 @@
 @use 'variables' as v;
 
-.brands_wrapper {
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
   padding: 1rem;
   border: 1px solid black;
   border-radius: 1rem;
-  margin-right: 1rem;
   background-color: v.$base;
-  .brand_item {
+  .types_item {
     color: v.$second;
     padding: 0.5rem;
     font-size: 1.5rem;
     text-decoration: none;
     list-style: none;
-    margin: 1rem 0;
+    // margin: 1rem 0;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color .7s linear;
@@ -22,3 +25,4 @@
     }
   }
 }
+

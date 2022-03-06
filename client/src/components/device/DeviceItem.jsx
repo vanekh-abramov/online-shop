@@ -6,7 +6,7 @@ const DeviceItem = ({ img, id, name, price }) => {
     <li className={styles.device_item}>
       <img src={`${LOCAL_HOST}/${img}`} alt={id} />
       <h4 className={styles.device_name}>{name}</h4>
-      <p>{price}</p>
+      <p>{price}$</p>
     </li>
   );
 };
