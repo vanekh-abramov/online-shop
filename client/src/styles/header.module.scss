@@ -6,9 +6,25 @@
   background-color: v.$base;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-left: 5rem;
   font-size: 2rem;
   color: #fff;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  .nav {
+    align-items: center;
+    margin-right: 5rem;
+    .nav_item {
+      color: v.$second;
+      text-decoration: none;
+      padding: 0 1rem;
+      border-radius: 1rem;
+      transition: background-color .7s linear;
+      &:hover {
+        background-color: v.$second;
+        color: v.$base;
+      }
+    }
+  }
 }
