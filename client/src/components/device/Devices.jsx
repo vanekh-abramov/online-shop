@@ -6,7 +6,7 @@ import useFetch from "../../hooks/useFetch";
 
 const Devices = () => {
 
-  const [devices, loading, error] = useFetch(`${LOCAL_HOST}/${API_URL}/${DEVICE_URL}`);
+  const [devices, loading, error] = useFetch(`${LOCAL_HOST}/${API_URL}/${DEVICE_URL}?limit=20`);
 
   return (
     <ul className={styles.devices}>

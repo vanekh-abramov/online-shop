@@ -10,7 +10,7 @@
   padding-left: 5rem;
   font-size: 2rem;
   color: #fff;
-  border-radius: 1rem;
+  border-radius: v.$bordradius;
   margin-bottom: 1rem;
   .nav {
     align-items: center;
@@ -19,7 +19,7 @@
       color: v.$second;
       text-decoration: none;
       padding: 0 1rem;
-      border-radius: 1rem;
+      border-radius: v.$bordradius;
       transition: background-color .7s linear;
       &:hover {
         background-color: v.$second;
