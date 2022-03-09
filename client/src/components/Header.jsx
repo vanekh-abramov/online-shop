@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "../styles/header.module.scss";
 import { NavLink } from "react-router-dom";
-import { BASKET_ROUTE, CATALOG_ROUTE, HOME_ROUTE } from "../constants/routerLinks";
+import {
+  BASKET_ROUTE,
+  CATALOG_ROUTE,
+  HOME_ROUTE,
+} from "../constants/routerLinks";
 
 const Header = () => {
   return (
@@ -11,8 +15,12 @@ const Header = () => {
         <NavLink className={styles.nav_item} to={HOME_ROUTE}>
           Home
         </NavLink>
-        <NavLink className={styles.nav_item} to={CATALOG_ROUTE}>Catalog</NavLink>
-        <NavLink className={styles.nav_item} to={BASKET_ROUTE}>Basket</NavLink>
+        <NavLink className={styles.nav_item} to={CATALOG_ROUTE}>
+          Catalog
+        </NavLink>
+        <NavLink className={styles.nav_item} to={BASKET_ROUTE}>
+          Basket
+        </NavLink>
       </nav>
     </header>
   );

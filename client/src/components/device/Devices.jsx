@@ -5,8 +5,10 @@ import { LOCAL_HOST, API_URL, DEVICE_URL } from "../../constants/internalLinks";
 import useFetch from "../../hooks/useFetch";
 
 const Devices = () => {
-
-  const [devices, loading, error] = useFetch(`${LOCAL_HOST}/${API_URL}/${DEVICE_URL}?limit=20`);
+  const limit = 20
+  const [devices, loading, error] = useFetch(
+    `${LOCAL_HOST}/${API_URL}/${DEVICE_URL}?limit=${limit}`
+  );
 
   return (
     <ul className={styles.devices}>

@@ -14,7 +14,7 @@ const Types = () => {
       {loading && <div>{loading}</div>}
       {error && <div>{error}</div>}
       {types.map(({ name, createdAt }) => (
-        <TypesItem key={createdAt} name={name}/>
+        <TypesItem key={createdAt} name={name} />
       ))}
     </ul>
   );
