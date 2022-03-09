@@ -1,0 +1,26 @@
+@use 'variables' as v;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: v.$bordradius;
+  background-color: v.$base;
+  .types_item {
+    color: v.$second;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    list-style: none;
+    border-radius: v.$bordradius;
+    cursor: pointer;
+    transition: background-color .7s linear;
+    &:hover {
+      background-color: v.$second;
+      color: v.$base;
+    }
+  }
+}
+

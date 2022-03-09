@@ -1,0 +1,23 @@
+@use 'variables' as v;
+
+.brands_wrapper {
+  padding: 1rem;
+  border-radius: v.$bordradius;
+  margin-right: 1rem;
+  background-color: v.$base;
+  .brand_item {
+    color: v.$second;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    list-style: none;
+    margin: 1rem 0;
+    border-radius: v.$bordradius;
+    cursor: pointer;
+    transition: background-color .7s linear;
+    &:hover {
+      background-color: v.$second;
+      color: v.$base;
+    }
+  }
+}
