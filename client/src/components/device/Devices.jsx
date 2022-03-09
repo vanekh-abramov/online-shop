@@ -5,9 +5,9 @@ import { LOCAL_HOST, API_URL, DEVICE_URL } from "../../constants/internalLinks";
 import useFetch from "../../hooks/useFetch";
 
 const Devices = () => {
-  const limit = 20
+  const limit = "limit=20";
   const [devices, loading, error] = useFetch(
-    `${LOCAL_HOST}/${API_URL}/${DEVICE_URL}?limit=${limit}`
+    `${LOCAL_HOST}/${API_URL}/${DEVICE_URL}?${limit}`
   );
 
   return (
