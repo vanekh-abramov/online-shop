@@ -5,8 +5,11 @@ import useFetch from "../../hooks/useFetch";
 import BrandItem from "./BrandItem";
 
 const Brands = () => {
+  const limit = 10;
+  const page = 1;
   const [brands, loading, error] = useFetch(
-    `${LOCAL_HOST}/${API_URL}/${BRAND_URL}`
+    `${LOCAL_HOST}/${API_URL}/${BRAND_URL}`,
+    { limit, page }
   );
 
   return (

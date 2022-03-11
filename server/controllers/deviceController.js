@@ -30,26 +30,80 @@ class DeviceController {
 
     }
 
+    // async getAll(req, res) {
+    //     // let {brandId, typeId, limit, page} = req.query
+    //     let { brandId, typeId, brands, limit, page } = req.query
+    //     let productsWithBrands = []
+    //     page = page || 1
+    //     limit = limit || 9
+    //     let offset = page * limit - limit
+    //     // let devices;
+    //     let devices = []
+    //     if (!brandId && !typeId) {
+    //         devices = await Device.findAndCountAll({limit, offset})
+    //     }
+    //     if (brandId && !typeId) {
+    //         devices = await Device.findAndCountAll({where:{brandId}, limit, offset})
+    //     }
+    //     if (!brandId && typeId) {
+    //         devices = await Device.findAndCountAll({where:{typeId}, limit, offset})
+    //     }
+    //     if (brandId && typeId) {
+    //         devices = await Device.findAndCountAll({where:{typeId, brandId}, limit, offset})
+    //     }
+    //     // return res.json(devices)
+    //     if (brands) {
+    //         console.log('###################################' + devices)
+    //         const brandsList = [...JSON.parse(brands)]
+    //         devices.filter((product) => {
+    //             brandsList.forEach((brand) => {
+    //               if (product.brandId === brand) {
+    //                 productsWithBrands.push(product)
+    //               }
+    //             })
+    //         })
+    //         return res.json(productsWithBrands)
+    //       }
+          
+    //       return res.json(devices)
+    // }
     async getAll(req, res) {
-        let {brandId, typeId, limit, page} = req.query
+        let { brandId, typeId, brands, limit, page } = req.query
+    
+        limit = limit || 21
         page = page || 1
-        limit = limit || 9
+    
         let offset = page * limit - limit
-        let devices;
+        let products = []
+        let productsWithBrands = []
+    
         if (!brandId && !typeId) {
-            devices = await Device.findAndCountAll({limit, offset})
+          products = await Device.findAll({limit, offset})
         }
         if (brandId && !typeId) {
-            devices = await Device.findAndCountAll({where:{brandId}, limit, offset})
+          products = await Device.findAll({where:{brandId}, limit, offset})
         }
         if (!brandId && typeId) {
-            devices = await Device.findAndCountAll({where:{typeId}, limit, offset})
+          products = await Device.findAll({where:{typeId}, limit, offset})
         }
         if (brandId && typeId) {
-            devices = await Device.findAndCountAll({where:{typeId, brandId}, limit, offset})
+          products = await Device.findAll({where:{brandId, typeId}, limit, offset})
         }
-        return res.json(devices)
-    }
+    
+        if (brands) {
+          const brandsList = [...JSON.parse(brands)]
+            products.filter((product) => {
+              brandsList.forEach((brand) => {
+                if (product.brandId === brand) {
+                  productsWithBrands.push(product)
+                }
+              })
+          })
+          return res.json(productsWithBrands)
+        }
+        
+        return res.json(products)
+      }
 
     async getOne(req, res) {
         const {id} = req.params
