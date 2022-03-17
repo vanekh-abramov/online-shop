@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useEffect, useState } from "react";
+// var qs = require('qs');
 
 const useFetch = (url, options) => {
   const [data, setData] = useState([]);
@@ -15,8 +16,9 @@ const useFetch = (url, options) => {
             params: {
               limit: options?.limit,
               page: options?.page,
-              typeId: options?.typeId
-            }
+              typeId: options?.typeId,
+              brands: options?.brands
+            },
           }
         );
         setData(response.data);
@@ -27,8 +29,8 @@ const useFetch = (url, options) => {
       }
     };
     fetchData()
-  }, [options?.typeId])
-  // console.log(url + ' ' + options)
+  }, [options?.typeId, options?.brands])
+  console.log(options)
   return [data, loading, error];
 };
 

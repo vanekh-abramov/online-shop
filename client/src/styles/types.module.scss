@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 .container {
   display: flex;
@@ -16,11 +16,15 @@
     list-style: none;
     border-radius: v.$bordradius;
     cursor: pointer;
-    transition: background-color .7s linear;
-    &:hover {
+    transition: background-color 0.7s linear;
+    &:hover,
+    &:focus {
       background-color: v.$second;
       color: v.$base;
     }
+    // &:focus {
+    //   background-color: v.$second;
+    //   color: v.$base;
+    // }
   }
 }
-

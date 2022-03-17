@@ -1,4 +1,3 @@
-// import axios from "axios";
 import React, { useContext } from "react";
 import { TYPE_URL, API_URL, LOCAL_HOST } from "../../constants/internalLinks";
 import { Context } from "../../context";
@@ -24,9 +23,11 @@ const Types = () => {
       {loading && <div>{loading}</div>}
       {error && <div>{error}</div>}
       {types.map(({ name, createdAt, id }) => (
-        <div key={createdAt} onClick={typesHandler(id)}>
-          <TypesItem key={createdAt} name={name} />
-        </div>
+        <TypesItem
+          key={createdAt}
+          name={name}
+          onClick={typesHandler(id)}
+        />
       ))}
     </ul>
   );

@@ -6,11 +6,11 @@ import useFetch from "../../hooks/useFetch";
 import { Context } from "../../context";
 
 const Devices = () => {
-  const { typeID } = useContext(Context);
+  const { typeID, brandID } = useContext(Context);
 
   const [devices, loading, error] = useFetch(
     `${LOCAL_HOST}/${API_URL}/${DEVICE_URL}?`,
-    { limit: 20, page: 1, typeId: typeID }
+    { limit: 20, page: 1, typeId: typeID, brands: brandID ? JSON.stringify(brandID) : null }
   );
 
   return (

@@ -6,9 +6,11 @@ import { Context } from './context'
 
 function App() {
   const [typeID, setTypeID] = useState(null)
+  const [brandID, setBrandID] = useState([])
+  const [basketDevice, setBasketDevice] = useState([])
 
   return (
-    <Context.Provider value={{ typeID, setTypeID }}>
+    <Context.Provider value={{ typeID, setTypeID, brandID, setBrandID, basketDevice, setBasketDevice }}>
       <div className={styles.container}>
         <Header />
         <div className={styles.container_inner}>
