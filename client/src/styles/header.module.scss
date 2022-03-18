@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 .header {
   width: 100%;
@@ -20,8 +20,9 @@
       text-decoration: none;
       padding: 0 1rem;
       border-radius: v.$bordradius;
-      transition: background-color .7s linear;
-      &:hover {
+      transition: background-color 0.7s linear;
+      &:hover,
+      &:focus {
         background-color: v.$second;
         color: v.$base;
       }

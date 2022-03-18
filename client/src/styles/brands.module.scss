@@ -20,4 +20,8 @@
       color: v.$base;
     }
   }
+  .active {
+    background-color: v.$second;
+    color: v.$base;
+  }
 }

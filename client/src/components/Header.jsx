@@ -12,13 +12,13 @@ const Header = () => {
     <header className={styles.header}>
       Header
       <nav className={styles.nav}>
-        <NavLink className={styles.nav_item} to={HOME_ROUTE}>
+        <NavLink tabIndex={1} className={styles.nav_item} to={HOME_ROUTE}>
           Home
         </NavLink>
-        <NavLink className={styles.nav_item} to={CATALOG_ROUTE}>
+        <NavLink tabIndex={1} className={styles.nav_item} to={CATALOG_ROUTE}>
           Catalog
         </NavLink>
-        <NavLink className={styles.nav_item} to={BASKET_ROUTE}>
+        <NavLink tabIndex={1} className={styles.nav_item} to={BASKET_ROUTE}>
           Basket
         </NavLink>
       </nav>

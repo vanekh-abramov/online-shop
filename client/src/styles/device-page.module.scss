@@ -1,0 +1,33 @@
+@use "variables" as v;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+img {
+  width: 30%;
+}
+.basket_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  border: 0.7rem solid v.$base;
+}
+.price {
+  align-items: center;
+  font-size: 2rem;
+}
+.basket_btn {
+  width: 80%;
+  height: 4rem;
+  background-color: v.$base;
+  font-size: 1.5rem;
+  color: v.$second;
+  cursor: pointer;
+  transition: box-shadow 0.2s linear;
+  &:hover {
+    box-shadow: 10px 5px 5px v.$base;
+  }
+}
