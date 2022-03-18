@@ -1,12 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useEffect, useState } from "react";
-// var qs = require('qs');
 
 const useFetch = (url, options) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,8 +28,8 @@ const useFetch = (url, options) => {
       }
     };
     fetchData()
-  }, [options?.typeId, options?.brands])
-  console.log(options)
+  }, [options?.limit, options?.page, options?.typeId, options?.brands, url])
+
   return [data, loading, error];
 };
 

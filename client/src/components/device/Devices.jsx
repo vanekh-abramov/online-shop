@@ -10,7 +10,12 @@ const Devices = () => {
 
   const [devices, loading, error] = useFetch(
     `${LOCAL_HOST}/${API_URL}/${DEVICE_URL}?`,
-    { limit: 20, page: 1, typeId: typeID, brands: brandID ? JSON.stringify(brandID) : null }
+    {
+      limit: 20,
+      page: 1,
+      typeId: typeID,
+      brands: JSON.stringify(brandID),
+    }
   );
 
   return (

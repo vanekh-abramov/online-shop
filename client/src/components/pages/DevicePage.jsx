@@ -12,7 +12,7 @@ const DevicePage = () => {
   const [error, setError] = useState("");
   const location = useLocation();
   const currentLocation = location.pathname;
-  const {basketDevice, setBasketDevice} = useContext(Context)
+  const { basketDevice, setBasketDevice } = useContext(Context);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,9 +32,8 @@ const DevicePage = () => {
   }, []);
 
   const addBasket = () => {
-    setBasketDevice([...basketDevice, data])
-  }
-  console.log(basketDevice)
+    setBasketDevice([...basketDevice, data]);
+  };
 
   return (
     <div className={styles.container}>
@@ -44,7 +43,9 @@ const DevicePage = () => {
       <h2 className={styles.device_name}>{data.name}</h2>
       <div className={styles.basket_container}>
         <p className={styles.price}>{data.price}$</p>
-        <button className={styles.basket_btn} onClick={addBasket}>add in basket</button>
+        <button className={styles.basket_btn} onClick={addBasket}>
+          add in basket
+        </button>
       </div>
     </div>
   );

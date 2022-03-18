@@ -17,7 +17,7 @@ const Brands = () => {
       const array = [...brandID, id];
       const result = [];
 
-      array.sort(function (a, b) {
+      array.sort((a, b) => {
         return a - b;
       });
 

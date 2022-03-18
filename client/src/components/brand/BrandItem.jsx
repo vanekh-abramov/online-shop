@@ -14,7 +14,12 @@ const BrandItem = ({ name, ...rest }) => {
   };
 
   return (
-    <li onFocus={toggleHandler} tabIndex={2} {...rest} className={myClass.join(" ")}>
+    <li
+      onFocus={toggleHandler}
+      tabIndex={2}
+      {...rest}
+      className={myClass.join(" ")}
+    >
       {name}
     </li>
   );
